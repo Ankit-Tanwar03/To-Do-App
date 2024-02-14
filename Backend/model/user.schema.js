@@ -31,7 +31,9 @@ const getJwtToken = function () {
         email: this.email
     },
     config.JWT_SECRET,
-    {ExpiresIn: config.JWT_EXPIRY})
+    {
+        ExpiresIn: config.JWT_EXPIRY
+    })
 }
 
 export default mongoose.model("User", userSchema)
