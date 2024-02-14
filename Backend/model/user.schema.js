@@ -1,6 +1,6 @@
-import mongoose from mongoose;
-import JWT from "jsonwebtoken";
-import config from "../config/env.config";
+const mongoose = require("mongoose")
+const JWT = require("jsonwebtoken");
+const config = require("./config/env.config");
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -36,4 +36,4 @@ const getJwtToken = function () {
     })
 }
 
-export default mongoose.model("User", userSchema)
+module.exports = mongoose.model("User", userSchema)

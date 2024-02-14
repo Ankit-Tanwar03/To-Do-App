@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-import config from "./env.config";
+const mongoose = require("mongoose");
+const config = require("./env.config");
 
 const connectToDB = () => {
     mongoose.connect(config.MONGODB_URI)
     .then((conn) => {
-            console.log(`Connected DB: ${conn.connection.host}`) 
+            console.log(`Connected to DB: ${conn.connection.host}`) 
     })      
     .catch((error) => {
             console.log(error.message);
@@ -12,7 +12,7 @@ const connectToDB = () => {
         })
     }
 
-export default connectToDB    
+module.exports = connectToDB    
 
 
     
