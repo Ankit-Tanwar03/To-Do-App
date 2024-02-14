@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import config from "./env.config";
 
-const coonectToDB = () => {
+const connectToDB = () => {
     mongoose.connect(config.MONGODB_URI)
     .then((conn) => {
             console.log(`Connected DB: ${conn.connection.host}`) 
@@ -12,7 +12,7 @@ const coonectToDB = () => {
         })
     }
 
-export default coonectToDB    
+export default connectToDB    
 
 
     
